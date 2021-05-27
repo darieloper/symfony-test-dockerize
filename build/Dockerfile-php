@@ -3,6 +3,7 @@ FROM php:fpm-stretch
 RUN apt-get update && apt-get install -y
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+  libpng-dev \
   git \
   zlib1g-dev \
   libxml2-dev \
@@ -11,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   zip \
   intl \
   mysqli \
+  gd \
   pdo pdo_mysql
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
